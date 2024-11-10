@@ -2,6 +2,7 @@ package store.controller;
 
 import java.util.List;
 import store.model.Product;
+import store.model.ShoppingCartProduct;
 import store.view.InputView;
 import store.view.OutputView;
 
@@ -14,5 +15,27 @@ public class StoreController {
     public void start() {
         outputView.intro();
         outputView.products(productList);
+
+        handlePayment();
+    }
+
+    private void handlePayment() {
+        while (true) {
+            try {
+                processPayment();
+                return;
+            } catch (IllegalArgumentException e) {
+                outputView.errorMessage(e);
+            }
+        }
+    }
+
+    private void processPayment() {
+        List<ShoppingCartProduct> shoppingCart = getShoppingCart();
+    }
+
+    private List<ShoppingCartProduct> getShoppingCart() {
+        outputView.buyProductMessage();
+        return ShoppingCartProduct.createList(inputView.readShoppingCart().rawShoppingCart());
     }
 }
