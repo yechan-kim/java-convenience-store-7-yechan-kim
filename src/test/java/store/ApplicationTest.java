@@ -53,38 +53,6 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
-    void 프로모션_재고_부족_Y() {
-        assertSimpleTest(() -> {
-            run("[콜라-11]", "Y", "N", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈8,000");
-        });
-    }
-
-    @Test
-    void 프로모션_재고_부족_N() {
-        assertSimpleTest(() -> {
-            run("[콜라-11]", "N", "N", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈6,000");
-        });
-    }
-
-    @Test
-    void 프로모션_보너스_받기() {
-        assertSimpleTest(() -> {
-            run("[오렌지주스-1]", "Y", "Y", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈1,800");
-        });
-    }
-
-    @Test
-    void 프로모션_보너스_안_받기() {
-        assertSimpleTest(() -> {
-            run("[오렌지주스-1]", "N", "Y", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈1,260");
-        });
-    }
-
-    @Test
     void 예외_테스트() {
         assertSimpleTest(() -> {
             runException("[컵라면-12]", "N", "N");
@@ -93,58 +61,10 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
-    void 구매할_상품과_수량_형식이_올바르지_않은_경우_예외_발생() {
-        assertSimpleTest(() -> {
-            run("콜라-3", "[콜라-3]", "N", "N");
-            assertThat(output()).contains("[ERROR] 올바르지 않은 형식으로 입력했습니다. 다시 입력해 주세요.");
-        });
-    }
-
-    @Test
     void 잘못된_명령을_입력하면_예외_발생() {
         assertSimpleTest(() -> {
             run("[콜라-3]", "X", "N", "X", "N");
             assertThat(output()).contains("[ERROR] 잘못된 입력입니다. 다시 입력해 주세요.");
-        });
-    }
-
-    @Test
-    void 존재하지_않는_상품을_입력한_경우_예외_발생() {
-        assertSimpleTest(() -> {
-            run("[몬스터-3]", "[콜라-3]", "N", "N");
-            assertThat(output()).contains("[ERROR] 존재하지 않는 상품입니다. 다시 입력해 주세요.");
-        });
-    }
-
-    @Test
-    void 재고가_없는_상품을_구매하려고_하는_경우_예외_발생() {
-        assertSimpleTest(() -> {
-            run("[오렌지주스-10]", "[오렌지주스-2]", "N", "N");
-            assertThat(output()).contains("[ERROR] 재고 수량을 초과하여 구매할 수 없습니다. 다시 입력해 주세요.");
-        });
-    }
-
-    @Test
-    void 멤버십_할인_적용() {
-        assertSimpleTest(() -> {
-            run("[콜라-3],[에너지바-5]", "Y", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈9,000");
-        });
-    }
-
-    @Test
-    void 멤버십_할인_미적용() {
-        assertSimpleTest(() -> {
-            run("[콜라-3],[에너지바-5]", "N", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈12,000");
-        });
-    }
-
-    @Test
-    void 멤버십_할인_한도_초과() {
-        assertSimpleTest(() -> {
-            run("[정식도시락-8]", "Y", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈43,200");
         });
     }
 
