@@ -21,10 +21,17 @@ public class StoreController {
     private final List<Product> productList = inputView.readProductList();
 
     public void start() {
-        outputView.intro();
-        outputView.products(productList);
+        String command = Command.YES.getValue();
 
-        handlePayment();
+        while (command.equals(Command.YES.getValue())) {
+            outputView.intro();
+            outputView.products(productList);
+
+            handlePayment();
+
+            outputView.anotherProductMessage();
+            command = inputView.readCommand();
+        }
     }
 
     private void handlePayment() {
