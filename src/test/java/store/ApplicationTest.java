@@ -125,6 +125,30 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
+    void 멤버십_할인_적용() {
+        assertSimpleTest(() -> {
+            run("[콜라-3],[에너지바-5]", "Y", "Y", "N");
+            assertThat(output().replaceAll("\\s", "")).contains("내실돈9,000");
+        });
+    }
+
+    @Test
+    void 멤버십_할인_미적용() {
+        assertSimpleTest(() -> {
+            run("[콜라-3],[에너지바-5]", "N", "N");
+            assertThat(output().replaceAll("\\s", "")).contains("내실돈12,000");
+        });
+    }
+
+    @Test
+    void 멤버십_할인_한도_초과() {
+        assertSimpleTest(() -> {
+            run("[정식도시락-8]", "Y", "N");
+            assertThat(output().replaceAll("\\s", "")).contains("내실돈43,200");
+        });
+    }
+
+    @Test
     void 실행_결과_예시() {
         assertNowTest(() -> {
             run("[콜라-3],[에너지바-5]", "Y", "Y", "[콜라-10]", "Y", "N", "Y", "[오렌지주스-1]", "Y", "Y", "N");
