@@ -7,6 +7,7 @@ import store.exception.StoreException;
 public class Cashier {
 
     private final List<Product> productList;
+    private final PromotionHandler promotionHandler = new PromotionHandler();
 
     private Cashier(List<Product> productList) {
         this.productList = productList;
@@ -30,8 +31,7 @@ public class Cashier {
             throw StoreException.from(ErrorMessage.STOCK_EXCEEDED);
         }
 
-        return PurchasedProduct.of(product.getName(), product.getPrice(), product.getPromotionQuantity(), quantity,
-                product.getPromotion());
+        return promotionHandler.applyPromotion(product, quantity);
     }
 
     private Product findProduct(List<Product> productList, String name) {
