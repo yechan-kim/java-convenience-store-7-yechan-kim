@@ -1,7 +1,9 @@
 package store.controller;
 
 import java.util.List;
+import store.model.Cashier;
 import store.model.Product;
+import store.model.PurchasedProduct;
 import store.model.ShoppingCartProduct;
 import store.view.InputView;
 import store.view.OutputView;
@@ -32,6 +34,8 @@ public class StoreController {
 
     private void processPayment() {
         List<ShoppingCartProduct> shoppingCart = getShoppingCart();
+        Cashier cashier = Cashier.from(productList);
+        List<PurchasedProduct> purchasedProductList = cashier.requestPayment(shoppingCart);
     }
 
     private List<ShoppingCartProduct> getShoppingCart() {
