@@ -38,4 +38,16 @@ public class InputView {
             }
         }
     }
+
+    public String readCommand() {
+        while (true) {
+            try {
+                String command = Console.readLine().trim();
+                validator.command(command);
+                return command;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 }
