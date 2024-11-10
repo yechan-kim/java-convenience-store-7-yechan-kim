@@ -173,8 +173,8 @@ N
 
 ## `src/main/resources`에  있는 `md`파일 읽기
 
-- [ ]  `promotions.md`의 내용을 바탕으로 `Product`겍체를 만든다.
-- [ ]  `product.md`의 내용을 바탕으로 `Product`객체를 만든다.
+- [x]  `promotions.md`의 내용을 바탕으로 `Product`겍체를 만든다.
+- [x]  `product.md`의 내용을 바탕으로 `Product`객체를 만든다.
 
 ## 환영인사 메시지 출력
 
@@ -297,6 +297,16 @@ N
 
 ## **[dto]**
 
+## **[util]**
+
+### **FileLoader**
+
+- 파일을 문자열로 읽어오기
+
+### **ProductPromotionParser**
+
+- 문자열의 정보를 Product와 Promotion으로 변환
+
 # **📝 테스트 케이스**
 
 ## **정상적으로 처리되는 케이스**
@@ -355,23 +365,23 @@ N
 
   ```java
   public class InputView {
-      public String readItem() {
-          System.out.println("구매하실 상품명과 수량을 입력해 주세요. (예: [사이다-2],[감자칩-1])");
-          String input = Console.readLine();    
-          // ...
-      }
-      // ...
-  }
+    public String readItem() {
+        System.out.println("구매하실 상품명과 수량을 입력해 주세요. (예: [사이다-2],[감자칩-1])");
+        String input = Console.readLine();
+        // ...
+    }
+    // ...
+}
   ```
 
   ```java
   public class OutputView {
-      public void printProducts() {
-          System.out.println("- 콜라 1,000원 10개 탄산2+1");
-          // ...
-      }
-      // ...
-  }
+    public void printProducts() {
+        System.out.println("- 콜라 1,000원 10개 탄산2+1");
+        // ...
+    }
+    // ...
+}
   ```
 
 ## **라이브러리 요구 사항**
