@@ -233,9 +233,9 @@ N
 
 ## 추가 구매 여부를 확인
 
-- [ ]  “`감사합니다. 구매하고 싶은 다른 상품이 있나요? (Y/N)`”를 출력한다.
-    - [ ]  `Y`를 누르면 최신화된 재고 현황을 기준으로 처음부터 다시 실시한다.
-    - [ ]  `N`을 누르면 프로그램이 종료된다.
+- [x]  “`감사합니다. 구매하고 싶은 다른 상품이 있나요? (Y/N)`”를 출력한다.
+    - [x]  `Y`를 누르면 최신화된 재고 현황을 기준으로 처음부터 다시 실시한다.
+    - [x]  `N`을 누르면 프로그램이 종료된다.
 
 # **⚡ 예외 처리 사항**
 
@@ -366,7 +366,7 @@ N
   Clone
 - [x]  우아한테크코스 계정을 collaborator로 초대
 - [x]  `README.md`에 구현할 기능 목록을 정리해 추가
-- [ ]  Git의 커밋 단위는 앞 단계에서`README.md`에 정리한 기능 목록 단위로 추가한다.
+- [x]  Git의 커밋 단위는 앞 단계에서`README.md`에 정리한 기능 목록 단위로 추가한다.
     - [AngularJS Git Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)을 참고해 커밋
       메시지를 작성한다.
 - [ ]  우아한테크코스 지원 플랫폼에 소감 작성 후 제출
@@ -374,16 +374,16 @@ N
 
 # **✅ 프로그래밍 요구 사항**
 
-- [ ]  JDK 21 버전에서 실행 가능해야 한다.
-- [ ]  애플리케이션 실행의 시작점은`Application`의`main()`이다.
-- [ ]  `build.gradle`파일은 변경할 수 없으며, 제공된 라이브러리 이외의 외부 라이브러리는 사용하지 않는다.
-- [ ]  애플리케이션 종료 시`System.exit()`를 호출하지 않는다.
-- [ ]  프로그래밍 요구 사항에서 달리 명시하지 않는 한 파일, 패키지 등의 이름을 바꾸거나 이동하지 않는다.
-- [ ]  [Java Style Guide](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 원칙으로 프로그래밍한다.
-- [ ]  indent(인덴트, 들여쓰기) depth를`3`이 넘지 않도록 구현한다.`2`까지만 허용한다.
-- [ ]  3항 연산자를 쓰지 않는다.
-- [ ]  함수(또는 메서드)가 한 가지 일만 하도록 최대한 작게 만들어라.
-- [ ]  JUnit 5와 AssertJ를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
+- [x]  JDK 21 버전에서 실행 가능해야 한다.
+- [x]  애플리케이션 실행의 시작점은`Application`의`main()`이다.
+- [x]  `build.gradle`파일은 변경할 수 없으며, 제공된 라이브러리 이외의 외부 라이브러리는 사용하지 않는다.
+- [x]  애플리케이션 종료 시`System.exit()`를 호출하지 않는다.
+- [x]  프로그래밍 요구 사항에서 달리 명시하지 않는 한 파일, 패키지 등의 이름을 바꾸거나 이동하지 않는다.
+- [x]  [Java Style Guide](https://github.com/woowacourse/woowacourse-docs/tree/main/styleguide/java)를 원칙으로 프로그래밍한다.
+- [x]  indent(인덴트, 들여쓰기) depth를`3`이 넘지 않도록 구현한다.`2`까지만 허용한다.
+- [x]  3항 연산자를 쓰지 않는다.
+- [x]  함수(또는 메서드)가 한 가지 일만 하도록 최대한 작게 만들어라.
+- [x]  JUnit 5와 AssertJ를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
     - 테스트 도구 사용법이 익숙하지 않다면 아래 문서를 참고하여 학습한 후 테스트를 구현한다.
         - [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide)
         - [AssertJ User Guide](https://assertj.github.io/doc)
@@ -391,10 +391,10 @@ N
         - [Guide to JUnit 5 Parameterized Tests](https://www.baeldung.com/parameterized-tests-junit-5)
 - [ ]  함수(또는 메서드)의 길이가 10라인을 넘어가지 않도록 구현한다.
     - 함수(또는 메서드)가 한 가지 일만 잘 하도록 구현한다.
-- [ ]  `else` 예약어 및 `switch`/`case`문을 쓰지 않는다.
-- [ ]  Java `Enum`을 적용하여 프로그램을 구현한다.
+- [x]  `else` 예약어 및 `switch`/`case`문을 쓰지 않는다.
+- [x]  Java `Enum`을 적용하여 프로그램을 구현한다.
 - [ ]  구현한 기능에 대한 단위 테스트를 작성한다. 단, UI(System.out, [System.in](http://system.in/), Scanner) 로직은 제외한다.
-- [ ]  입출력을 담당하는 클래스를 별도로 구현한다.
+- [x]  입출력을 담당하는 클래스를 별도로 구현한다.
     - 아래`InputView`,`OutputView`클래스를 참고하여 입출력 클래스를 구현한다.
     - 클래스 이름, 메소드 반환 유형, 시그니처 등은 자유롭게 수정할 수 있다.
 
@@ -421,30 +421,30 @@ N
 
 ## **라이브러리 요구 사항**
 
-- [ ]  `camp.nextstep.edu.missionutils`에서 제공하는`Console`API를 사용하여 구현해야 한다.
-- [ ]  현재 날짜와 시간을 가져오려면`camp.nextstep.edu.missionutils.DateTimes`의`now()`를 활용한다.
-- [ ]  사용자가 입력하는 값은`camp.nextstep.edu.missionutils.Console`의`readLine()`을 활용한다.
+- [x]  `camp.nextstep.edu.missionutils`에서 제공하는`Console`API를 사용하여 구현해야 한다.
+- [x]  현재 날짜와 시간을 가져오려면`camp.nextstep.edu.missionutils.DateTimes`의`now()`를 활용한다.
+- [x]  사용자가 입력하는 값은`camp.nextstep.edu.missionutils.Console`의`readLine()`을 활용한다.
 
 # **✅ 3주차 공통 피드백**
 
-- [ ]  함수(메서드) 라인에 대한 기준도 적용한다
-- [ ]  예외 상황에 대한 고민한다
-- [ ]  비즈니스 로직과 UI 로직의 분리한다
+- [x]  함수(메서드) 라인에 대한 기준도 적용한다
+- [x]  예외 상황에 대한 고민한다
+- [x]  비즈니스 로직과 UI 로직의 분리한다
 - [ ]  연관성이 있는 상수는 static final 대신 enum을 활용한다
-- [ ]  final 키워드를 사용해 값의 변경을 막는다
-- [ ]  객체의 상태 접근을 제한한다
+- [x]  final 키워드를 사용해 값의 변경을 막는다
+- [x]  객체의 상태 접근을 제한한다
 - [ ]  객체는 객체답게 사용한다
 - [ ]  필드(인스턴스 변수)의 수를 줄이기 위해 노력한다
-- [ ]  성공하는 케이스 뿐만 아니라 예외 케이스도 테스트한다
-- [ ]  테스트 코드도 코드다
-- [ ]  테스트를 위한 코드는 구현 코드에서 분리되어야 한다
+- [x]  성공하는 케이스 뿐만 아니라 예외 케이스도 테스트한다
+- [x]  테스트 코드도 코드다
+- [x]  테스트를 위한 코드는 구현 코드에서 분리되어야 한다
 - [ ]  단위 테스트하기 어려운 코드를 단위 테스트하기
-- [ ]  private 함수를 테스트 하고 싶다면 클래스(객체) 분리를 고려한다
+- [x]  private 함수를 테스트 하고 싶다면 클래스(객체) 분리를 고려한다
 
 # **⛳️ 4주차 목표**
 
-- [ ]  MVC 패턴 적용
-- [ ]  TDD 개발 방법론 준수
-- [ ]  자바의 Streams API 연습 및 활용
-- [ ]  람다 표현식을 효과적으로 코드에 적용
+- [x]  MVC 패턴 적용
+- [x]  TDD 개발 방법론 준수
+- [x]  자바의 Streams API 연습 및 활용
+- [x]  람다 표현식을 효과적으로 코드에 적용
 - [ ]  SOLID 원칙 준수
