@@ -31,6 +31,22 @@ public class Product {
         return name;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getPromotionQuantity() {
+        return promotionQuantity;
+    }
+
     public void updateQuantity(int quantity) {
         this.quantity = quantity;
     }
