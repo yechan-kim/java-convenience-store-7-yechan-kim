@@ -7,7 +7,7 @@ public class Product {
     private final int price;
     private final Promotion promotion;
 
-    private final int promotionQuantity;
+    private int promotionQuantity;
     private int quantity;
 
     private Product(String name, int price, int quantity, int promotionQuantity, Promotion promotion) {
@@ -52,6 +52,6 @@ public class Product {
     }
 
     public void updatePromotionQuantity(int promotionQuantity) {
-        this.quantity = promotionQuantity;
+        this.promotionQuantity = promotionQuantity;
     }
 }
