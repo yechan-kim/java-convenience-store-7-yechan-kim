@@ -5,6 +5,7 @@ import store.model.Product;
 
 public class OutputView {
 
+    private static final String ANOTHER_PRODUCT_MESSAGE = "감사합니다. 구매하고 싶은 다른 상품이 있나요?";
     private static final String BUY_PRODUCT_MESSAGE = "구매하실 상품명과 수량을 입력해 주세요. (예: [사이다-2],[감자칩-1])";
     private static final String COMMAND_SUFFIX = " (Y/N)";
     private static final String CURRENT_PRODUCTS_MESSAGE = "현재 보유하고 있는 상품입니다.";
@@ -91,6 +92,10 @@ public class OutputView {
 
     public void receiptFinalAmount(int price) {
         System.out.printf(RECEIPT_FINAL_AMOUNT, price);
+    }
+
+    public void anotherProductMessage() {
+        System.out.println(ANOTHER_PRODUCT_MESSAGE + COMMAND_SUFFIX);
     }
 
     public void products(List<Product> products) {
