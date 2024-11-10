@@ -7,11 +7,11 @@ import store.exception.StoreException;
 public class StockUpdater {
 
     public void updateStock(List<PurchasedProduct> purchasedProductList, List<Product> productList) {
-        for (PurchasedProduct purchasedProduct : purchasedProductList) {
+        purchasedProductList.forEach(purchasedProduct -> {
             Product product = findProduct(productList, purchasedProduct.getName());
             product.updateQuantity(product.getQuantity() - purchasedProduct.getQuantity());
             product.updatePromotionQuantity(product.getPromotionQuantity() - purchasedProduct.getPromotionQuantity());
-        }
+        });
     }
 
     private Product findProduct(List<Product> productList, String name) {
