@@ -31,4 +31,8 @@ public class ShoppingCartProduct {
     public String getName() {
         return name;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }
