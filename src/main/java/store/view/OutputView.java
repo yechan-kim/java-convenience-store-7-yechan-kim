@@ -16,6 +16,16 @@ public class OutputView {
     private static final String OUT_OF_STOCK = "재고 없음";
     private static final String PROMOTION_PRODUCT_FORMAT = "- %s %,d원 %s %s";
     private static final String QUANTITY_SUFFIX = "개";
+    private static final String RECEIPT_FINAL_AMOUNT = "내실돈\t\t\t\t\t\t%,10d\n";
+    private static final String RECEIPT_FOOTER = "=======================================";
+    private static final String RECEIPT_GIFT_FORMAT = "%-10s\t\t%,-4d\n";
+    private static final String RECEIPT_GIFT_HEADER = "===============증\t정=================";
+    private static final String RECEIPT_HEADER = "==============W 편의점================";
+    private static final String RECEIPT_MEMBERSHIP_DISCOUNT = "멤버십할인\t\t\t\t\t%10s\n";
+    private static final String RECEIPT_PRODUCT_FORMAT = "%-10s\t\t%,-4d\t%,10d\n";
+    private static final String RECEIPT_PRODUCT_HEADER = "상품명\t\t\t\t수량\t\t금액";
+    private static final String RECEIPT_PROMOTION_DISCOUNT = "행사할인\t\t\t\t\t%10s\n";
+    private static final String RECEIPT_TOTAL_AMOUNT = "총구매액\t\t\t%-4d\t%,10d\n";
 
     public void errorMessage(Exception e) {
         System.out.println(e.getMessage());
@@ -42,6 +52,45 @@ public class OutputView {
 
     public void membershipDiscountMessage() {
         System.out.println(MEMBERSHIP_DISCOUNT_MESSAGE + COMMAND_SUFFIX);
+    }
+
+    public void receiptHeader() {
+        System.out.println(RECEIPT_HEADER);
+        System.out.println(RECEIPT_PRODUCT_HEADER);
+    }
+
+    public void receiptProduct(String name, int quantity, int price) {
+        System.out.printf(RECEIPT_PRODUCT_FORMAT, name, quantity, price);
+    }
+
+    public void receiptGiftHeader() {
+        System.out.println(RECEIPT_GIFT_HEADER);
+    }
+
+    public void receiptGift(String name, int quantity) {
+        System.out.printf(RECEIPT_GIFT_FORMAT, name, quantity);
+    }
+
+    public void receiptFooter() {
+        System.out.println(RECEIPT_FOOTER);
+    }
+
+    public void receiptTotalAmount(int quantity, int price) {
+        System.out.printf(RECEIPT_TOTAL_AMOUNT, quantity, price);
+    }
+
+    public void receiptPromotionDiscount(int price) {
+        String priceString = "-" + String.format("%,d", price);
+        System.out.printf(RECEIPT_PROMOTION_DISCOUNT, priceString);
+    }
+
+    public void receiptMembershipDiscount(int price) {
+        String priceString = "-" + String.format("%,d", price);
+        System.out.printf(RECEIPT_MEMBERSHIP_DISCOUNT, priceString);
+    }
+
+    public void receiptFinalAmount(int price) {
+        System.out.printf(RECEIPT_FINAL_AMOUNT, price);
     }
 
     public void products(List<Product> products) {
