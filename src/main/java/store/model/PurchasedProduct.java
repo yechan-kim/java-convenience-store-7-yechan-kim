@@ -31,4 +31,12 @@ public class PurchasedProduct {
     public int getQuantity() {
         return quantity;
     }
+
+    public int getPromotionQuantity() {
+        return promotionQuantity;
+    }
+
+    public Promotion getPromotion() {
+        return promotion;
+    }
 }
