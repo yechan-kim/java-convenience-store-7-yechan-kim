@@ -10,6 +10,7 @@ public class OutputView {
     private static final String CURRENT_PRODUCTS_MESSAGE = "현재 보유하고 있는 상품입니다.";
     private static final String FREE_PRODUCT_PROMOTION_MESSAGE = "현재 %s은(는) 1개를 무료로 더 받을 수 있습니다. 추가하시겠습니까?";
     private static final String GREETING_MESSAGE = "안녕하세요. W편의점입니다.";
+    private static final String MEMBERSHIP_DISCOUNT_MESSAGE = "멤버십 할인을 받으시겠습니까?";
     private static final String NON_PROMOTION_PRODUCT_FORMAT = "- %s %,d원 %s";
     private static final String NO_PROMOTION_FORMAT = "현재 %s %d개는 프로모션 할인이 적용되지 않습니다. 그래도 구매하시겠습니까?";
     private static final String OUT_OF_STOCK = "재고 없음";
@@ -39,6 +40,9 @@ public class OutputView {
         System.out.println(COMMAND_SUFFIX);
     }
 
+    public void membershipDiscountMessage() {
+        System.out.println(MEMBERSHIP_DISCOUNT_MESSAGE + COMMAND_SUFFIX);
+    }
 
     public void products(List<Product> products) {
         for (Product product : products) {
