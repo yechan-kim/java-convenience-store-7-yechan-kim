@@ -50,4 +50,8 @@ public class Product {
     public void updateQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public void updatePromotionQuantity(int promotionQuantity) {
+        this.quantity = promotionQuantity;
+    }
 }
