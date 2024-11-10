@@ -17,16 +17,6 @@ public class OutputView {
     private static final String OUT_OF_STOCK = "재고 없음";
     private static final String PROMOTION_PRODUCT_FORMAT = "- %s %,d원 %s %s";
     private static final String QUANTITY_SUFFIX = "개";
-    private static final String RECEIPT_FINAL_AMOUNT = "내실돈\t\t\t\t\t\t%,10d\n";
-    private static final String RECEIPT_FOOTER = "=======================================";
-    private static final String RECEIPT_GIFT_FORMAT = "%-10s\t\t%,-4d\n";
-    private static final String RECEIPT_GIFT_HEADER = "===============증\t정=================";
-    private static final String RECEIPT_HEADER = "==============W 편의점================";
-    private static final String RECEIPT_MEMBERSHIP_DISCOUNT = "멤버십할인\t\t\t\t\t%10s\n";
-    private static final String RECEIPT_PRODUCT_FORMAT = "%-10s\t\t%,-4d\t%,10d\n";
-    private static final String RECEIPT_PRODUCT_HEADER = "상품명\t\t\t\t수량\t\t금액";
-    private static final String RECEIPT_PROMOTION_DISCOUNT = "행사할인\t\t\t\t\t%10s\n";
-    private static final String RECEIPT_TOTAL_AMOUNT = "총구매액\t\t\t%-4d\t%,10d\n";
 
     public void errorMessage(Exception e) {
         System.out.println(e.getMessage());
@@ -56,42 +46,42 @@ public class OutputView {
     }
 
     public void receiptHeader() {
-        System.out.println(RECEIPT_HEADER);
-        System.out.println(RECEIPT_PRODUCT_HEADER);
+        System.out.println(ReceiptFormat.HEADER.getFormat());
+        System.out.println(ReceiptFormat.PRODUCT_HEADER.getFormat());
     }
 
     public void receiptProduct(String name, int quantity, int price) {
-        System.out.printf(RECEIPT_PRODUCT_FORMAT, name, quantity, price);
+        System.out.printf(ReceiptFormat.PRODUCT_FORMAT.getFormat(), name, quantity, price);
     }
 
     public void receiptGiftHeader() {
-        System.out.println(RECEIPT_GIFT_HEADER);
+        System.out.println(ReceiptFormat.GIFT_HEADER.getFormat());
     }
 
     public void receiptGift(String name, int quantity) {
-        System.out.printf(RECEIPT_GIFT_FORMAT, name, quantity);
+        System.out.printf(ReceiptFormat.GIFT_FORMAT.getFormat(), name, quantity);
     }
 
     public void receiptFooter() {
-        System.out.println(RECEIPT_FOOTER);
+        System.out.println(ReceiptFormat.FOOTER.getFormat());
     }
 
     public void receiptTotalAmount(int quantity, int price) {
-        System.out.printf(RECEIPT_TOTAL_AMOUNT, quantity, price);
+        System.out.printf(ReceiptFormat.TOTAL_AMOUNT.getFormat(), quantity, price);
     }
 
     public void receiptPromotionDiscount(int price) {
         String priceString = "-" + String.format("%,d", price);
-        System.out.printf(RECEIPT_PROMOTION_DISCOUNT, priceString);
+        System.out.printf(ReceiptFormat.PROMOTION_DISCOUNT.getFormat(), priceString);
     }
 
     public void receiptMembershipDiscount(int price) {
         String priceString = "-" + String.format("%,d", price);
-        System.out.printf(RECEIPT_MEMBERSHIP_DISCOUNT, priceString);
+        System.out.printf(ReceiptFormat.MEMBERSHIP_DISCOUNT.getFormat(), priceString);
     }
 
     public void receiptFinalAmount(int price) {
-        System.out.printf(RECEIPT_FINAL_AMOUNT, price);
+        System.out.printf(ReceiptFormat.FINAL_AMOUNT.getFormat(), price);
     }
 
     public void anotherProductMessage() {
