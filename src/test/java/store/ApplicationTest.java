@@ -127,7 +127,7 @@ class ApplicationTest extends NsTest {
     @Test
     void 멤버십_할인_적용() {
         assertSimpleTest(() -> {
-            run("[콜라-3],[에너지바-5]", "Y", "Y", "N");
+            run("[콜라-3],[에너지바-5]", "Y", "N");
             assertThat(output().replaceAll("\\s", "")).contains("내실돈9,000");
         });
     }
