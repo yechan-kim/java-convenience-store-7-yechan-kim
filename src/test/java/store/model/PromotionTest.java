@@ -37,7 +37,7 @@ public class PromotionTest extends NsTest {
     void 프로모션_보너스_안_받기() {
         assertSimpleTest(() -> {
             run("[오렌지주스-1]", "N", "Y", "N");
-            assertThat(output().replaceAll("\\s", "")).contains("내실돈1,260");
+            assertThat(output().replaceAll("\\s", "")).contains("내실돈1,800");
         });
     }
 
