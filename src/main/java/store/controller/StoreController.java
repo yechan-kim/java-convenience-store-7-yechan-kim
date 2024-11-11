@@ -60,7 +60,8 @@ public class StoreController {
     }
 
     private void processReceipt(List<PurchasedProduct> purchasedProductList) {
-        int memberShipDiscount = memberShipDiscountHandler.apply(purchasedProductList);
+        outputView.membershipDiscountMessage();
+        int memberShipDiscount = memberShipDiscountHandler.apply(purchasedProductList, inputView.readCommand());
 
         receipt.printReceipt(purchasedProductList, memberShipDiscount);
     }
