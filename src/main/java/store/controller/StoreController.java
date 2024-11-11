@@ -13,14 +13,24 @@ import store.view.OutputView;
 
 public class StoreController {
 
-    private final Receipt receipt = new Receipt();
-    private final InputView inputView = new InputView();
-    private final OutputView outputView = new OutputView();
-    private final StockUpdater stockUpdater = new StockUpdater();
-    private final MemberShipDiscountHandler memberShipDiscountHandler = new MemberShipDiscountHandler();
-    private final List<Product> productList = inputView.readProductList();
+    private final Receipt receipt;
+    private final InputView inputView;
+    private final OutputView outputView;
+    private final StockUpdater stockUpdater;
+    private final MemberShipDiscountHandler memberShipDiscountHandler;
+    private final List<Product> productList;
 
-    public void start() {
+    public StoreController(Receipt receipt, InputView inputView, OutputView outputView, StockUpdater stockUpdater,
+                           MemberShipDiscountHandler memberShipDiscountHandler) {
+        this.receipt = receipt;
+        this.inputView = inputView;
+        this.outputView = outputView;
+        this.stockUpdater = stockUpdater;
+        this.memberShipDiscountHandler = memberShipDiscountHandler;
+        this.productList = inputView.readProductList();
+    }
+
+    public void run() {
         String command = Command.YES.getValue();
 
         while (command.equals(Command.YES.getValue())) {
