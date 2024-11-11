@@ -4,9 +4,9 @@ import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
 import store.dto.ShoppingCartInput;
 import store.model.Product;
+import store.model.ProductPromotionParser;
 import store.model.Promotion;
 import store.util.FileLoader;
-import store.util.ProductPromotionParser;
 import store.validator.InputValidator;
 
 public class InputView {

@@ -1,9 +1,7 @@
-package store.util;
+package store.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import store.model.Product;
-import store.model.Promotion;
 
 public class ProductPromotionParser {
 
