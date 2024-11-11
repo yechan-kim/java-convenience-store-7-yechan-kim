@@ -10,7 +10,7 @@ import store.exception.StoreException;
 
 public class FileLoader {
 
-    public List<String> load(String filePath) {
+    public static List<String> load(String filePath) {
         try (Stream<String> linesStream = Files.lines(Paths.get(filePath))) {
             return linesStream
                     .skip(1)

@@ -14,16 +14,15 @@ public class InputView {
     private static final String PRODUCT_FILE_PATH = "src/main/resources/products.md";
     private static final String PROMOTION_FILE_PATH = "src/main/resources/promotions.md";
 
-    private final FileLoader fileLoader = new FileLoader();
     private final InputValidator validator = new InputValidator();
     private final ProductPromotionParser parser = new ProductPromotionParser();
 
     public List<Product> readProductList() {
-        return parser.parseProducts(fileLoader.load(PRODUCT_FILE_PATH), readPromotionList());
+        return parser.parseProducts(FileLoader.load(PRODUCT_FILE_PATH), readPromotionList());
     }
 
     private List<Promotion> readPromotionList() {
-        return parser.parsePromotions(fileLoader.load(PROMOTION_FILE_PATH));
+        return parser.parsePromotions(FileLoader.load(PROMOTION_FILE_PATH));
     }
 
     public ShoppingCartInput readShoppingCart() {

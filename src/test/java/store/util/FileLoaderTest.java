@@ -9,7 +9,6 @@ public class FileLoaderTest {
     @Test
     void 파일_읽기를_실패_하면_예외_발생() {
         String path = "test";
-        FileLoader fileLoader = new FileLoader();
-        assertThrows(IllegalArgumentException.class, () -> fileLoader.load(path));
+        assertThrows(IllegalArgumentException.class, () -> FileLoader.load(path));
     }
 }
