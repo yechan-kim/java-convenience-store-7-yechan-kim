@@ -57,9 +57,4 @@ public class PurchasedProduct {
                 Objects.equals(name, that.name) &&
                 Objects.equals(promotion, that.promotion);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, price, promotionQuantity, quantity, promotion);
-    }
 }
