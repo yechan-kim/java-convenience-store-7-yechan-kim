@@ -1,11 +1,14 @@
 package store.model;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ShoppingCartProduct {
 
     private final String name;
-    private final int quantity;
+
+    private int quantity;
 
     private ShoppingCartProduct(String name, int quantity) {
         this.name = name;
@@ -22,9 +25,20 @@ public class ShoppingCartProduct {
 
     public static List<ShoppingCartProduct> createList(String rawShoppingCart) {
         List<String> rawShoppingCartList = List.of(rawShoppingCart.split(","));
-
-        return rawShoppingCartList.stream()
+        return mergeProducts(rawShoppingCartList.stream()
                 .map(ShoppingCartProduct::of)
+                .toList());
+    }
+
+    private static List<ShoppingCartProduct> mergeProducts(List<ShoppingCartProduct> shoppingCart) {
+        return shoppingCart.stream()
+                .collect(Collectors.toMap(ShoppingCartProduct::getName, product -> product,
+                        (existing, replacement) -> {
+                            existing.quantity += replacement.getQuantity();
+                            return existing;
+                        }))
+                .values()
+                .stream()
                 .toList();
     }
 
@@ -34,5 +48,18 @@ public class ShoppingCartProduct {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ShoppingCartProduct that = (ShoppingCartProduct) o;
+        return quantity == that.quantity &&
+                Objects.equals(name, that.name);
     }
 }
