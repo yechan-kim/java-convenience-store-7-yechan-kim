@@ -74,6 +74,6 @@ public class PromotionHandler {
             return PurchasedProduct.of(product.getName(), product.getPrice(), quantity + 1, 0, promotion);
         }
 
-        return PurchasedProduct.of(product.getName(), product.getPrice(), 0, quantity, promotion);
+        return PurchasedProduct.of(product.getName(), product.getPrice(), quantity, 0, promotion);
     }
 }
