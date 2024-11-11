@@ -4,10 +4,20 @@ import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import store.Application;
 
 public class PromotionTest extends NsTest {
+
+    private final PromotionHandler promotionHandler = new PromotionHandler();
+
+    @Test
+    void 프로모션_없음() {
+        Product product = Product.of(List.of("콜라", "1000", "10", "null"), null);
+        PurchasedProduct result = promotionHandler.applyPromotion(product, 5);
+        assertThat(result).isEqualTo(PurchasedProduct.of("콜라", 1000, 0, 5, null));
+    }
 
     @Test
     void 프로모션_재고_부족_Y() {
