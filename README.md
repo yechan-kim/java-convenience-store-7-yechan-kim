@@ -400,7 +400,7 @@ N
         - [AssertJ User Guide](https://assertj.github.io/doc)
         - [AssertJ Exception Assertions](https://www.baeldung.com/assertj-exception-assertion)
         - [Guide to JUnit 5 Parameterized Tests](https://www.baeldung.com/parameterized-tests-junit-5)
-- [ ]  함수(또는 메서드)의 길이가 10라인을 넘어가지 않도록 구현한다.
+- [x]  함수(또는 메서드)의 길이가 10라인을 넘어가지 않도록 구현한다.
     - 함수(또는 메서드)가 한 가지 일만 잘 하도록 구현한다.
 - [x]  `else` 예약어 및 `switch`/`case`문을 쓰지 않는다.
 - [x]  Java `Enum`을 적용하여 프로그램을 구현한다.
