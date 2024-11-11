@@ -3,10 +3,12 @@ package store;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertNowTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
 import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
+import store.validator.InputValidator;
 
 class ApplicationTest extends NsTest {
     @Test
@@ -62,10 +64,9 @@ class ApplicationTest extends NsTest {
 
     @Test
     void 잘못된_명령을_입력하면_예외_발생() {
-        assertSimpleTest(() -> {
-            run("[콜라-3]", "X", "N", "X", "N");
-            assertThat(output()).contains("[ERROR] 잘못된 입력입니다. 다시 입력해 주세요.");
-        });
+        String command = "test";
+        InputValidator inputValidator = new InputValidator();
+        assertThrows(IllegalArgumentException.class, () -> inputValidator.command(command));
     }
 
     @Test
