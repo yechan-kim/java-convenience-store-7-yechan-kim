@@ -14,7 +14,7 @@ public class PromotionHandler {
     public PurchasedProduct applyPromotion(Product product, int quantity) {
         Promotion promotion = product.getPromotion();
 
-        if (promotion == null) {
+        if (validateNoPromotion(promotion)) {
             return PurchasedProduct.of(product.getName(), product.getPrice(), 0, quantity, null);
         }
 
@@ -23,10 +23,6 @@ public class PromotionHandler {
 
     private PurchasedProduct processPromotion(Product product, Promotion promotion, int quantity) {
         int promotionQuantity = product.getPromotionQuantity();
-
-        if (validateNoPromotionDate(promotion)) {
-            return PurchasedProduct.of(product.getName(), product.getPrice(), 0, quantity, promotion);
-        }
 
         if (promotionQuantity < quantity) {
             return handleInsufficientPromotion(product, quantity, promotionQuantity, promotion);
@@ -39,9 +35,9 @@ public class PromotionHandler {
         return PurchasedProduct.of(product.getName(), product.getPrice(), quantity, 0, promotion);
     }
 
-    private boolean validateNoPromotionDate(Promotion promotion) {
+    private boolean validateNoPromotion(Promotion promotion) {
         LocalDate now = DateTimes.now().toLocalDate();
-        return promotion.getStartDate().isAfter(now) || promotion.getEndDate().isBefore(now);
+        return promotion == null || promotion.getStartDate().isAfter(now) || promotion.getEndDate().isBefore(now);
     }
 
     private PurchasedProduct handleInsufficientPromotion(Product product, int quantity, int promotionQuantity,

@@ -47,10 +47,15 @@ public class PurchasedProduct {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+
+        if (!(o instanceof PurchasedProduct that)) {
             return false;
         }
-        PurchasedProduct that = (PurchasedProduct) o;
+
+        return isEqualTo(that);
+    }
+
+    private boolean isEqualTo(PurchasedProduct that) {
         return price == that.price &&
                 promotionQuantity == that.promotionQuantity &&
                 quantity == that.quantity &&
