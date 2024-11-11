@@ -380,7 +380,7 @@ N
 - [x]  Git의 커밋 단위는 앞 단계에서`README.md`에 정리한 기능 목록 단위로 추가한다.
     - [AngularJS Git Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)을 참고해 커밋
       메시지를 작성한다.
-- [ ]  우아한테크코스 지원 플랫폼에 소감 작성 후 제출
+- [x]  우아한테크코스 지원 플랫폼에 소감 작성 후 제출
 - [x]  제출한 후 결과 확인, 통과하지 못했다면 수정해 다시 제출
 
 # **✅ 프로그래밍 요구 사항**
